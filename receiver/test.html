@@ -17,7 +17,10 @@ function clickme(){
     }
 
     function timehandler(){
-        $.getJSON("https://dweet.io/get/latest/dweet/for/t27_testing",handler1);
+    	var url="https://dweet.io/get/latest/dweet/for/"+document.getElementById("devicename").value;
+	document.getElementById("textname").innerHTML=url
+	$.getJSON(url,handler1);
+        //$.getJSON("https://dweet.io/get/latest/dweet/for/t27_testing",handler1);
 //"https://dweet.io/get/dweets/for/t27_testing"
     }
     timehandler();
@@ -27,6 +30,7 @@ document.getElementById("text123").innerHTML="hello";
 </script>
 Device name
 <br>
+<input type="text" name="enter" class="enter" value="" id="devicename"/>
 <button type="button" onClick="clickme()">try</button>
 
 <div id="textname" >hi</div>
