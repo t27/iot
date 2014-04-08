@@ -1,4 +1,4 @@
-var sendDweet= function (var devicename, var command) {
+var sendDweet= function (devicename, command) {
 	// body...
 }
 
@@ -10,25 +10,31 @@ var commandExecuter = {
 	"st": sendDweet(name,"stop")
 };
 //w=119,a=97,s=115,d=100,x=120
-$().keypress(function(e){
-	if(e.keyCode == 119){
+
+$(document).keypress(function(e){
+	if(e.which == 119 || e.which ==38){
 		$('#up').click();
+		alert("Up");
 		return e.preventDefault();
 	}
-	if(e.keyCode == 97){
+	if(e.which == 97 || e.which ==37){
 		$('#left').click();
+		alert("left");
 		return e.preventDefault();
 	}
-	if(e.keyCode == 115){
+	if(e.which == 115 || e.which ==40){
 		$('#down').click();
+		alert("down");
 		return e.preventDefault();
 	}
-	if(e.keyCode == 100){
+	if(e.which == 100 || e.which ==39){
 		$('#right').click();
+		alert("right");
 		return e.preventDefault();
 	}
 	if(e.keyCode == 120){
 		$('#stop').click();
+		alert("stop");
 		return e.preventDefault();
 	}
 });
