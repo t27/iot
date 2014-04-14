@@ -27,27 +27,27 @@ $( document ).ready(function(){
 $(document).keydown(function(e){
 	if((e.which == 119) || (e.which == 38)){
 		$('#up').click();
-		alert("Up");
+	//	alert("Up");
 		return e.preventDefault();
 	}
 	if( (e.which == 97) || (e.which == 37)){
 		$('#left').click();
-		alert("left");
+	//	alert("left");
 		return e.preventDefault();
 	}
 	if((e.which == 115) || (e.which == 40)){
 		$('#down').click();
-		alert("down");
+	//	alert("down");
 		return e.preventDefault();
 	}
 	if((e.which == 100) || (e.which == 39)){
 		$('#right').click();
-		alert("right");
+	//	alert("right");
 		return e.preventDefault();
 	}
 	if((e.keyCode == 120)){
 		$('#stop').click();
-		alert("stop");
+	//	alert("stop");
 		return e.preventDefault();
 	}
 });
@@ -55,27 +55,27 @@ $(document).keydown(function(e){
 $(document).keypress(function(e){
 	if((e.which == 119) ){
 		$('#up').click();
-		alert("Up");
+	//	alert("Up");
 		return e.preventDefault();
 	}
 	if( (e.which == 97) ){
 		$('#left').click();
-		alert("left");
+	//	alert("left");
 		return e.preventDefault();
 	}
 	if((e.which == 115) ){
 		$('#down').click();
-		alert("down");
+	//	alert("down");
 		return e.preventDefault();
 	}
 	if((e.which == 100) ){
 		$('#right').click();
-		alert("right");
+	//	alert("right");
 		return e.preventDefault();
 	}
 	if((e.keyCode == 120)){
 		$('#stop').click();
-		alert("stop");
+	//	alert("stop");
 		return e.preventDefault();
 	}
 });
