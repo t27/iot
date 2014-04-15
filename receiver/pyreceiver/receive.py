@@ -7,6 +7,8 @@ import serial
 import RPi.GPIO as GPIO
 
 
+#to use on raspberry pi ensure you have disabled the serial port for system use http://www.raspberrypi-spy.co.uk/2013/12/free-your-raspberry-pi-serial-port/
+
 def sendCommand(cmd,s_port): #
     s_port.open()
     if cmd=='forward':
@@ -29,11 +31,12 @@ def sendCommand(cmd,s_port): #
 
 
 if __name__ == "__main__":
-    devicename='t27testing'
+    devicename='bits279'
     if len(sys.argv)>1:
         devicename=sys.argv[1]
     prev=datetime.strptime("00:00:00","%H:%M:%S");
     test=serial.Serial("/dev/ttyAMA0",9600)
+    # GPIO.cleanup()test.write
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(7,GPIO.OUT)
     GPIO.setup(11,GPIO.OUT)
@@ -45,10 +48,10 @@ if __name__ == "__main__":
 
     while 1==1:
         #timenow=str(datetime.now())
-        GPIO.output(7,false);#turning off all LEDs
-        GPIO.output(11,false);
-        GPIO.output(13,false);
-        GPIO.output(15,false);
+        GPIO.output(7,False);#turning off all LEDs
+        GPIO.output(11,False);
+        GPIO.output(13,False);sudo
+        GPIO.output(15,True);
         
 
         #receiving command from server
@@ -89,8 +92,14 @@ if __name__ == "__main__":
                 prev=curr
 
                 # a platform specific function to write the serial data or write the motor commands through GPIO
-                sendCommand(commandreceived) 
+                sendCommand(commandreceived,test) 
                 GPIO.output(7,True);#light the LED if new data is received
+                sleep(0.2)
+                # GPIO.output(7,False);#light the LED if new data is received
+                # sleep(0.2)
+                # GPIO.output(7,True);#light the LED if new data is received
+                # sleep(0.2)
+
 
             print mtime + "  data="+rdata['with'][0]['content']['command']
         sleep(1)
