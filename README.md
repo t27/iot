@@ -1,6 +1,6 @@
 #iot
 ===
-Modified for running on the Raspberry Pi
+
 Receiver and Sender codes for a basic iot setup.
 Currently using the dweet.io servers. Thanks dweet.io!
 
