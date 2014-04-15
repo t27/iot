@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from dweet import Dweet
+from dweet import Dweet# importing custom class for handling server communication
 from datetime import datetime
 from time import sleep
 import sys
@@ -57,7 +57,7 @@ if __name__ == "__main__":
         try:
             rdata=dweet.latest_dweet(name=devicename)
         except Exception, e:
-            print "Connection Error Occured"
+            print "Connection Error Occured" # dweet class is configured to only return a Connection Error so any error thrown is a Connection error
             GPIO.output(13,True)
             sleep(0.5)
             GPIO.output(13,False)
