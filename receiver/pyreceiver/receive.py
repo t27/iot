@@ -1,19 +1,9 @@
 #!/usr/bin/python
 from dweet import Dweet# importing custom class for handling server communication
-from datetime import datetime
+from datetime import datetime 
 from time import sleep
 import sys
 
-# def sendCommand(cmd): #
-#     if cmd=='forward':
-        # write the relevant commands here
-#     elif cmd=='backward':
-
-#     elif cmd=='right':
-
-#     elif cmd=='left':
-
-#     elif cmd=='stop':
 
 if __name__ == "__main__":
     devicename='t27testing'
